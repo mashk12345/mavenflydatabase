@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.testproject</groupId>
+  <artifactId>sample</artifactId>
+  <packaging>war</packaging>
+  <version>24 SNAPSHOT</version>
+  <name>sample Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>sample</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+        <version>6.1.10</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+
+ <distributionManagement>
+    <!-- Publish the versioned releases here -->
+    <repository>
+        <id>nexus_release</id>
+        <name>nexus_release</name>
+        <url>http://192.168.56.101:8081/nexus/content/repositories/r_release
+        </url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+    <!-- Publish the snapshot releases here -->
+    <snapshotRepository>
+        <id>nexus_snap</id>
+        <name>nexus_snap</name>
+        <url>http://192.168.56.101:8081/nexus/content/repositories/r_snap
+        </url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </snapshotRepository>
+</distributionManagement>
+
+
+
+  
+</project>
+
+

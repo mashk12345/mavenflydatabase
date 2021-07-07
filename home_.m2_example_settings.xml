@@ -1,0 +1,46 @@
+<settings>
+
+<servers>
+
+	<server>
+		<id>test</id>
+		<username>user1</username>
+		<password>user1</password>
+	</server>
+
+    <server>
+      <id>nexus_release</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+    <server>
+      <id>nexus_snap</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+	
+	
+</servers>
+
+
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://192.168.56.101:19000
+                </sonar.host.url>
+            </properties>
+        </profile>
+     </profiles>
+
+
+
+</settings>
